@@ -1,0 +1,5 @@
+.vscode
+config.php
+credentials.md
+.env
+.DS_Store
