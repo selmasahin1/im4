@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    margin: 100px 0;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+input {
+    display: flex;
+    width: 65vw;
+    height: 5vh;
+    padding: 16px 24px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    border: 2px solid #313C66;
+    font-size: 3rem;
+    font-family: "Libre Franklin", sans-serif;
+    color: #313C66;
+}
+
+label {
+    color: #101E52;
+    font-family: "Libre Franklin";
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+.img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}

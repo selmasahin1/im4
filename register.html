@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Register</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Register</h1>
 
+<head>
+  <meta charset="UTF-8" />
+  <title>Register</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="js/header.js" defer></script>
+  <script src="js/mainButton.js" defer></script>
+</head>
+
+<body>
+  <main-header></main-header>
+  <main>
     <form id="registerForm">
+      <div class="img-container">
+        <img src="resources/assets/person.svg" alt="Logo" class="logo" />
+        <label>Profilbild</label>
+        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" />
+      </div>
+      <div>
+        <label>Vorname</label>
+        <input type="text" id="firstname" required />
+      </div>
+      <div>
+        <label>Nachname</label>
+        <input type="text" id="lastname" required />
+      </div>
       <div>
         <label>Email</label>
         <input type="email" id="email" required />
@@ -17,11 +38,11 @@
         <label>Password</label>
         <input type="password" id="password" required />
       </div>
-      <button type="submit">Register</button>
+      <main-button type="submit">Register</main-button>
     </form>
+  </main>
 
-    <p>Already have an account? <a href="login.html">Login here</a>.</p>
+  <script src="js/register.js"></script>
+</body>
 
-    <script src="js/register.js"></script>
-  </body>
 </html>

@@ -3,6 +3,7 @@ document
   .getElementById("registerForm")
   .addEventListener("submit", async (e) => {
     e.preventDefault();
+    console.log("Register form submitted");
 
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();

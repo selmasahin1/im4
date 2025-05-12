@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Login</h1>
 
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="js/mainButton.js" defer></script>
+  <script src="js/secondaryButton.js" defer></script>
+  <script src="js/header.js" defer></script>
+</head>
+
+<body>
+  <main-header></main-header>
+
+  <main>
+    <img src="resources/assets/person.svg" alt="Logo" class="logo" />
     <form id="loginForm">
+      <div>
+        <label>Email</label>
+        <input type="email" id="email" required />
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" id="password" required />
+      </div>
+      <main-button class="mainButton" type="submit">Login</main-button>
+    </form>
+
+    <script src="js/login.js"></script>
+  </main>
+
+  <!--     <form id="loginForm">
       <div>
         <label>Email</label>
         <input type="email" id="email" required />
@@ -22,6 +48,7 @@
 
     <p>Don’t have an account? <a href="register.html">Register here</a>.</p>
 
-    <script src="js/login.js"></script>
-  </body>
+    <script src="js/login.js"></script> -->
+</body>
+
 </html>
