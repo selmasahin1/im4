@@ -16,6 +16,20 @@ img {
     height: 200px;
 }
 
+h2 {
+    color: #101E52;
+    font-family: "Libre Franklin";
+    font-size: 6rem;
+    font-weight: 300;
+}
+
+h1 {
+    color: #313C66;
+    font-family: "Libre Franklin";
+    font-size: 5rem;
+    font-weight: 500;
+}
+
 input {
     display: flex;
     width: 65vw;
@@ -50,4 +64,11 @@ form {
     justify-content: center;
     align-items: center;
     gap: 2em;
+}
+
+.paragraph {
+    color: #101E52;
+    font-family: "Libre Franklin";
+    font-size: 3rem;
+    font-weight: 500;
 }

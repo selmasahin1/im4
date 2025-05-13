@@ -5,23 +5,19 @@
   <meta charset="UTF-8" />
   <title>Register</title>
   <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/buttonstyles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <script src="js/header.js" defer></script>
-  <script src="js/mainButton.js" defer></script>
 </head>
 
 <body>
   <main-header></main-header>
   <main>
+    <img src="resources/assets/person.svg" alt="Logo" class="logo" />
     <form id="registerForm">
-      <div class="img-container">
-        <img src="resources/assets/person.svg" alt="Logo" class="logo" />
-        <label>Profilbild</label>
-        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" />
-      </div>
       <div>
         <label>Vorname</label>
         <input type="text" id="firstname" required />
@@ -38,7 +34,7 @@
         <label>Password</label>
         <input type="password" id="password" required />
       </div>
-      <main-button type="submit">Register</main-button>
+      <button type="submit" class="primary-button">Register</button>
     </form>
   </main>
 
