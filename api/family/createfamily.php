@@ -8,9 +8,10 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-require_once '../system/config.php';
+require_once '../../system/config.php';
 
 $user_id = $_SESSION['user_id'];
+
 
 $action = $_POST['action'] ?? '';
 

@@ -1,0 +1,65 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F4FF;
+    font-family: "Libre Franklin";
+    min-height: 100vh;
+}
+
+footer {
+    width: 100%;
+    height: 14vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313C66;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: auto;
+}
+
+.home,
+.edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home img,
+.edit img {
+    width: 150px;
+    height: 150px;
+}
+
+.home {
+    background-color: #E1E5F6;
+    border-radius: 60px;
+    padding: 10px 13vw;
+    width: 40vw;
+    margin-left: 5vw;
+}
+
+.edit {
+    padding: 10px 13vw;
+    width: 40vw;
+    margin-right: 5vw;
+}
+
+p {
+    color: #101E52;
+    font-family: "Libre Franklin";
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.edit p {
+    color: #E1E5F6;
+}

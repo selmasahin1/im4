@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const response = await fetch("api/familycode.php", {
+        const response = await fetch("api/family/createfamily.php", {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Create new family and assign user
     btnCreate.addEventListener("click", async () => {
         try {
-            const response = await fetch("api/familycode.php", {
+            const response = await fetch("api/family/createfamily.php", {
                 method: "POST",
                 credentials: "include",
                 headers: {
