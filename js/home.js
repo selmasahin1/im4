@@ -69,19 +69,7 @@ function displayAttendanceRecords(records, date) {
         return;
     }
 
-    // Create and append records
-    records.forEach(record => {
-        const recordElement = document.createElement('div');
-        recordElement.classList.add('attendance-record');
-
-        recordElement.innerHTML = `
-            <p class="name">${record.first_name} ${record.last_name}</p>
-            <p class="status">${record.attending === 1 ? 'Present' : 'Absent'}</p>
-            <p class="time">${new Date(record.time_of_day).toLocaleTimeString()}</p>
-        `;
-
-        container.appendChild(recordElement);
-    });
+    container.innerHTML = records;
 }
 
 // Function to display error messages

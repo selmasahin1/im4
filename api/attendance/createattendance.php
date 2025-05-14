@@ -16,6 +16,7 @@ $time_of_day = isset($_POST['time_of_day']) ? $_POST['time_of_day'] : null;
 $attending = isset($_POST['attending']) ? $_POST['attending'] : null;
 $user_id = $_SESSION['user_id'];
 
+
 if (!$date || !preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
     http_response_code(400);
     header('Content-Type: application/json');
