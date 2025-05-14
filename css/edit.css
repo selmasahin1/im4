@@ -161,3 +161,28 @@ p {
 .primary-button {
   margin-top: 300px; /* Verschiebt den Button weiter nach unten */
 }
+
+.dateSwitcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    font-size: 3rem;;
+}
+
+img {
+    width: 70px;
+    height: 70px;
+}
+
+.showDate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#date {
+    font-size: 4rem;
+    font-weight: 500;
+}
