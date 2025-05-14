@@ -53,6 +53,50 @@ if (!$user_profile) {
 
 $user_profiles_id = $user_profile['id'];
 
+// Check if a record already exists for this user, date and time
+$check_sql = "
+    SELECT id 
+    FROM attendance 
+    WHERE user_profiles_id = :user_profiles_id 
+    AND date = :date 
+    AND time_of_day = :time_of_day
+";
+
+$check_stmt = $pdo->prepare($check_sql);
+$check_stmt->execute([
+    ':user_profiles_id' => $user_profiles_id,
+    ':date' => $date,
+    ':time_of_day' => $time_of_day
+]);
+
+$existing_record = $check_stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($existing_record) {
+    // Update existing record
+    $sql = "
+        UPDATE attendance 
+        SET attending = :attending 
+        WHERE id = :id
+    ";
+    
+    $stmt = $pdo->prepare($sql);
+    $success = $stmt->execute([
+        ':attending' => $attending,
+        ':id' => $existing_record['id']
+    ]);
+
+    if ($success) {
+        http_response_code(200);
+        header('Content-Type: application/json');
+        echo json_encode(["status" => "success", "message" => "Attendance record updated."]);
+    } else {
+        http_response_code(500);
+        header('Content-Type: application/json');
+        echo json_encode(["error" => "Failed to update attendance record."]);
+    }
+    exit;
+}
+
 // Insert into attendance table
 $sql = "
     INSERT INTO attendance (date, attending, time_of_day, user_profiles_id)
