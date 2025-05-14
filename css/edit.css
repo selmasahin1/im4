@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
     height: 100%;
     margin: 0;
 }
@@ -8,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #F0F4FF;
-    font-family: "Libre Franklin";
+    font-family: "Libre Franklin", sans-serif;
     min-height: 100vh;
 }
 
@@ -24,8 +23,8 @@ footer {
     margin-top: auto;
 }
 
-main{
-      display: flex;
+main {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -33,29 +32,27 @@ main{
     margin: 100px 0;
 }
 
-.home,
-.edit {
+.home, .edit {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.home img {
+.home img, .edit img {
     width: 150px;
     height: 150px;
     filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(200%) hue-rotate(180deg) brightness(100%) contrast(100%);
 }
 
 .edit img {
-    width: 150px;
+      width: 150px;
     height: 150px;
-    filter: brightness(0) saturate(100%) invert(6%) sepia(12%) saturate(200%) hue-rotate(220deg) brightness(100%) contrast(100%);
-    
+    filter: brightness(0) saturate(100%) invert(12%) sepia(14%) saturate(2800%) hue-rotate(198deg) brightness(90%) contrast(100%);
 }
 
+
 .home {
-   
     padding: 10px 13vw;
     width: 40vw;
     margin-left: 5vw;
@@ -67,11 +64,11 @@ main{
     padding: 10px 13vw;
     width: 40vw;
     margin-right: 5vw;
+    text-decoration: none;
 }
 
 p {
     color: #101E52;
-    font-family: "Libre Franklin";
     font-size: 3rem;
     font-weight: 500;
     margin: 0;
@@ -82,84 +79,93 @@ p {
 }
 
 .dropdown {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .dropdown-wrapper {
-  position: relative;         /* wichtig für absolut positioniertes Menü */
-  display: inline-block;      /* so gross wie Button */
+    position: relative;
+    display: inline-block;
 }
 
-
 .dropdown-button {
-  background-color: #313C66;
-  color: #F1F4FF;
-  padding: 30px 70px;
-  font-size: 60px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+    background-color: #313C66;
+    color: #F1F4FF;
+    padding: 30px 100px;
+    font-size: 60px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 500px;
+    height: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal;
+    word-break: break-word;
+    overflow: hidden;
+    line-height: 1.2;
+    
+}
+
+.dropdown-button.selected {
+    font-size: inherit;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;           /* direkt unter dem Button */
-  left: 0;
-  width: 100%;         /* exakt so breit wie der Button */
-  background-color: #F1F4FF;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 5px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #F1F4FF;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
 }
-
-
 
 .dropdown-content a {
     font-family: "Libre Franklin", sans-serif;
-  font-size: 45px; /* Schriftgröße */
-  font-weight: 400; /* Schriftstärke */
-  color: #101E52;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: flex;
+    font-size: 45px;
+    font-weight: 400;
+    color: #101E52;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
 }
 
 .dropdown-content a:hover {
-  background-color: #E1E5F6;
+    background-color: #E1E5F6;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .dropdown-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 80px; 
-  width: 100%;
-  margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+    width: 100%;
+    margin-top: 200px;
+    margin-right: 140px;
 }
 
 .dropdown label {
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 100px; /* Schriftgröße */
-    font-style: normal;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 60px;
     font-weight: 500;
-    line-height: normal;
-  color: #101E52; /* Schriftfarbe */
-  margin-bottom: 5px; /* Abstand nach unten */
-  margin-left: 50px;
-  display: flex; /* Block-Layout für bessere Lesbarkeit */
-  width: 50%; /* Einheitliche Breite */
+    color: #101E52;
+    margin-bottom: 8px;
+    margin-left: 140px;
+    width: 50%;
 }
 
 .primary-button {
-  margin-top: 300px; /* Verschiebt den Button weiter nach unten */
+    margin-top: 200px;
 }
 
 .dateSwitcher {
@@ -167,7 +173,7 @@ p {
     justify-content: center;
     align-items: center;
     gap: 2em;
-    font-size: 3rem;;
+    font-size: 3rem;
 }
 
 img {
