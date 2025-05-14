@@ -144,10 +144,6 @@ img {
     font-size: 0.75rem;
 }
 
-.attendance-icon img {
-    color: red;
-}
-
 .section-divider {
     margin: 2rem 0 1rem;
     text-align: center;
@@ -155,9 +151,9 @@ img {
 }
 
 .section-divider h2 {
-    font-size: 1.2rem;
-    color: #666;
-    font-weight: normal;
+    font-size: 3rem;
+    color: #383131;
+    font-weight: 500;
 }
 
 .no-response-grid {
