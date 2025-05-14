@@ -3,25 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <title>Protected Page</title>
-    <link rel="stylesheet" href="css/style.css" />
-     <script src="js/mainButton.js" defer></script>
-  <script src="js/secondaryButton.js" defer></script>
-    
+    <link rel="stylesheet" href="css/profile.css" />
+  <link rel="stylesheet" href="css/buttonstyles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="js/profilHeader.js" defer></script>
   </head>
 
   <body>
-    <h1>Profilübersicht</h1>
+    <profil-header></profil-header>
+     <img src="resources/assets/person.svg" alt="Logo" class="logo" />
+  
     
     <!-- This is where we'll dynamically show the protected content -->
     <section id="userProfile">
-      <h2>Benutzerprofil</h2>
-      <p id="userFirstName">Vorname <span id="firstName">Test</span></p>
-      <p id="userLastName">Nachname <span id="lastName">Test</span></p>
+     
+      <p id="userFullName">
+        <span id="firstName">Test</span>
+        <span id="lastName">Test</span>
+      </p>
+      <p id="familyCode">
+        Familiencode:<br>
+        <span id="familyCodeValue">ABC123</span>
+      </p>
     </section>
 
-    <button id="logoutBtn">Logout</button>
+    <button class="secondary-button" id="editProfileBtn">Profil bearbeiten</button>
+
+    <div class="profile-actions">
+        <button class="primary-button" id="logoutBtn">Ausloggen</button>
+        <button class="secondary-button" id="leaveFamilyBtn">Familie verlassen</button>
+    </div>
+
+
 
     <script type="module" src="js/profile.js" defer></script>
     <script src="js/logout.js"></script>
+
+    <footer>
+    <a href="home.html" class="home">
+        <img src="resources/assets/home.svg" alt="Home Icon" class="homeImg" />
+        <p>Home</p>
+    </a>
+    <a href="edit.html" class="edit">
+        <img src="resources/assets/Pencil.svg" alt="Edit Icon" class="editImg" />
+        <p>Bearbeiten</p>
+    </a>
+</footer>
   </body>
 </html>
