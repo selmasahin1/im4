@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const day = today.getDate();
     const month = today.toLocaleString('default', { month: 'long' });
     const readableDate = `${day}. ${month}`;
-    
+
     const formattedDate = today.toISOString().split('T')[0];
 
     const dateDisplay = document.getElementById('date');
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (prevDateBtn) {
         prevDateBtn.addEventListener('click', () => {
             changeDate(-1);
-            console.log('Previous date button clicked');
         });
     }
 
@@ -35,9 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const year = currentDate.getFullYear();
         const month = String(currentDate.getMonth() + 1).padStart(2, '0');
         const day = String(currentDate.getDate()).padStart(2, '0');
-        
+
         const newDate = `${year}-${month}-${day}`;
-        console.log('newDate', newDate)
 
         const dropdowns = [
             { id: "morning", time_of_day: "Morning", date: newDate },
@@ -68,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 formData.append('date', entry.date);
                 formData.append('time_of_day', entry.time_of_day);
                 formData.append('attending', entry.attending);
-                
+
                 const response = await fetch("api/attendance/createattendance.php", {
                     method: "POST",
                     credentials: "include",
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     },
                     body: formData,
                 });
-                
+
                 const result = await response.json();
                 console.log(result);
             }
@@ -89,12 +87,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // DROPDOWN LOGIK MIT TEXT-ANPASSUNG
+    // Dropdown Logik mit Text-Anpassung
     const dropdownButtons = document.querySelectorAll(".dropdown-button");
     dropdownButtons.forEach((button) => {
         const dropdownContent = button.nextElementSibling;
 
         button.addEventListener("click", (event) => {
+            event.stopPropagation(); // Verhindert, dass das globale Click-Event sofort schließt
+
+            // Schließe alle anderen Dropdowns
+            document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+                if (dropdown !== dropdownContent) {
+                    dropdown.style.display = "none";
+                }
+            });
+
+            // Öffne/Schließe das aktuelle Dropdown
             dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
         });
 
@@ -109,18 +117,41 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Schriftgrösse anpassen, damit Text immer in den Button passt
+    // Lade Anwesenheitsdaten für das aktuelle Datum
+    const date = document.getElementById('date').getAttribute('data-date');
+    loadAttendanceForDate(date);
+
+    async function loadAttendanceForDate(date) {
+        try {
+            const response = await fetch(`api/attendance/getattendance.php?date=${date}`);
+            const result = await response.json();
+
+            if (result.status === "success" && result.data.length > 0) {
+                result.data.forEach((entry) => {
+                    const button = document.querySelector(`#${entry.time_of_day.toLowerCase()}`);
+                    if (entry.attending === 1) {
+                        button.textContent = "Ich bin da.";
+                    } else {
+                        button.textContent = "Ich bin nicht da.";
+                    }
+                    adjustButtonTextSize(button);
+                });
+            }
+        } catch (error) {
+            console.error("Error loading attendance data:", error);
+        }
+    }
+
+    // Schriftgröße anpassen
     function adjustButtonTextSize(button) {
-        let fontSize = 60; // Startgrösse
+        let fontSize = 60;
         button.style.fontSize = `${fontSize}px`;
         button.style.whiteSpace = 'normal';
         button.style.wordBreak = 'break-word';
 
         const maxHeight = parseFloat(getComputedStyle(button).height);
-const maxWidth = parseFloat(getComputedStyle(button).width);
+        const maxWidth = parseFloat(getComputedStyle(button).width);
 
-
-        // Temporärer Container für Messung
         const tester = document.createElement("div");
         tester.style.position = "absolute";
         tester.style.visibility = "hidden";
@@ -145,6 +176,15 @@ const maxWidth = parseFloat(getComputedStyle(button).width);
     }
 });
 
+document.addEventListener("click", function(event) {
+    document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+        // Schließe, wenn das Ziel nicht Teil des Dropdowns ist
+        if (!dropdown.parentElement.contains(event.target)) {
+            dropdown.style.display = "none";
+        }
+    });
+});
+
 function changeDate(delta) {
     const dateDisplay = document.getElementById('date');
     if (!dateDisplay) return;
@@ -152,11 +192,14 @@ function changeDate(delta) {
     const currentDate = new Date(dateDisplay.getAttribute('data-date') || new Date());
     currentDate.setDate(currentDate.getDate() + delta);
 
-    const newDate = currentDate.toISOString().split('T')[0];
+    const newDate = currentDate.toISOString().split('T')[0];  // Hier wird `newDate` korrekt gesetzt
     const day = currentDate.getDate();
     const month = currentDate.toLocaleString('default', { month: 'long' });
     const readableDate = `${day}. ${month}`;
 
     dateDisplay.innerHTML = readableDate;
     dateDisplay.setAttribute('data-date', newDate);
+
+    // Lade neue Daten für das geänderte Datum
+    loadAttendanceForDate(newDate);
 }
