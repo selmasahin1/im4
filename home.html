@@ -17,27 +17,55 @@
   <main-header></main-header>
   <main>
     <div class="dateSwitcher">
-        <img src="resources/assets/Back.svg" alt="Logo" id="prevDate" />
-        <div class="showDate">
-            am 
-            <div id="date">Date</div>
-            sind Zuhause
-        </div>
-        <img src="resources/assets/Next.svg" alt="Logo" id="nextDate" />
+      <img src="resources/assets/Back.svg" alt="Logo" id="prevDate" />
+      <div class="showDate">
+        am
+        <div id="date">Date</div>
+        sind Zuhause
+      </div>
+      <img src="resources/assets/Next.svg" alt="Logo" id="nextDate" />
     </div>
-    <div id="attendanceContainer">
+    <div id="attendanceContainer" class="attendance-grid">
 
     </div>
+    <div class="section-divider">
+      <h2>Noch keine Angabe</h2>
+    </div>
+    <div id="noResponseContainer" class="no-response-grid">
+    </div>
+    <template id="userAttendanceTemplate">
+      <div class="user-attendance">
+        <div class="attendance-icons">
+          <img class="attendance-icon" data-time="Morning" src="">
+
+          <img class="attendance-icon" data-time="Midday" src="">
+
+          <img class="attendance-icon" data-time="Evening" src="">
+        </div>
+        <div class="user-circle">
+          <span class="initials"></span>
+        </div>
+        <div class="user-name"></div>
+      </div>
+    </template>
+    <template id="noResponseTemplate">
+      <div class="user-attendance no-response">
+        <div class="user-circle greyed-out">
+          <span class="initials"></span>
+        </div>
+        <div class="user-name greyed-out"></div>
+      </div>
+    </template>
   </main>
   <footer>
     <a href="home.html" class="home">
       <img src="resources/assets/home.svg" alt="Home Icon" class="homeImg" />
       <p>Home</p>
-  </a>
-  <a href="edit.html" class="edit">
+    </a>
+    <a href="edit.html" class="edit">
       <img src="resources/assets/Pencil.svg" alt="Edit Icon" class="editImg" />
       <p>Bearbeiten</p>
-  </a>
+    </a>
   </footer>
   <script src="js/home.js"></script>
 </body>
