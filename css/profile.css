@@ -1,0 +1,159 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #F0F4FF;
+    font-family: "Libre Franklin", sans-serif;
+    min-height: 100vh;
+}
+
+footer {
+    width: 100%;
+    height: 14vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #313C66;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4em;
+    margin: 100px 0;
+}
+
+.home, .edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home img, .edit img {
+    width: 150px;
+    height: 150px;
+    filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(200%) hue-rotate(180deg) brightness(100%) contrast(100%);
+}
+
+.edit img {
+      width: 150px;
+    height: 150px;
+    filter: brightness(0) saturate(100%) invert(12%) sepia(14%) saturate(2800%) hue-rotate(198deg) brightness(90%) contrast(100%);
+}
+
+
+.home {
+    padding: 10px 13vw;
+    width: 40vw;
+    margin-left: 5vw;
+}
+
+.edit {
+    
+    border-radius: 60px;
+    padding: 10px 13vw;
+    width: 40vw;
+    margin-right: 5vw;
+    text-decoration: none;
+}
+
+p {
+    color: #E1E5F6;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.home p {
+    color: #E1E5F6;
+}
+
+#userProfile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%; /* oder eine feste Höhe, falls nötig */
+}
+
+#userFullName {
+    display: flex;
+    justify-content: center;
+    gap: 0.7em;
+    font-size: 60px;
+    font-weight: 600;
+    color: #101E52;
+    margin-bottom: 1em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#familyCode {
+    color: #101E52;
+    font-size: 60px;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+#familyCodeValue {
+    display: block;
+    color: #101E52;
+    font-size: 60px;
+    font-weight: 500;
+    margin-top: 0.2em;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom: 0em;
+    width: 300px;
+    height: 300px;
+}
+
+#editProfileBtn {
+    margin-top: 1em;
+    margin-bottom: 5em; /* Erhöht den Abstand nach unten */
+    align-self: flex-start; /* Optional: linksbündig, entferne für zentriert */
+}
+
+button.primary-button {
+      display: block;
+    margin: 1em auto;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+button.secondary-button {
+    display: block;
+    margin: 1em auto;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.profile-actions {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
