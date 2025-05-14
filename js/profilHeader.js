@@ -31,8 +31,15 @@ class ProfilHeader extends HTMLElement {
                 width: 120px;
                 height: 120px;
             }
+
+            #logo {
+                width: 160px;
+                position: absolute;
+                left: 20px;
+            }
         </style>
         <header>
+            <img src="/resources/assets/logo.svg" alt="Logo" id="logo">
             <h1 id="familyname">Familie</h1>
             <a href="profile.html" id="profileLink">
                 <img src="/resources/assets/User.svg" alt="Profil" id="profileIcon">
@@ -57,7 +64,6 @@ class ProfilHeader extends HTMLElement {
             const data = await response.json();
             
             if (data.status === 'success') {
-                console.log('Family name:', data);
                 // Update the family name in the component
                 const familyNameElement = this.shadowRoot.getElementById('familyname');
                 familyNameElement.textContent = data.family_name;

@@ -126,7 +126,6 @@ function displayRespondingUsers(users) {
     if (!container) return;
 
     if (Object.keys(users).length === 0) {
-        container.innerHTML = '<p>Keine Einträge für heute.</p>';
         return;
     }
 
@@ -170,7 +169,12 @@ function displayNonRespondingUsers(users) {
     container.innerHTML = '';
 
     if (Object.keys(users).length === 0) {
-        container.innerHTML = '<p>Alle Familienmitglieder haben geantwortet!</p>';
+        // Hide the section divider
+        const sectionDivider = document.querySelector('.section-divider');
+        if (sectionDivider) {
+            sectionDivider.style.display = 'none';
+        }
+
         return;
     }
 
