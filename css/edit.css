@@ -11,6 +11,8 @@ body {
     min-height: 100vh;
 }
 
+
+
 footer {
     width: 100%;
     height: 14vh;
@@ -29,7 +31,6 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-decoration: none;
 }
 
 .home img,
@@ -99,8 +100,7 @@ p {
 }
 
 .dropdown-button.selected {
-    font-size: 14px;
-    line-height: 1.2;
+    font-size: inherit;
 }
 
 .dropdown-content {
@@ -137,9 +137,10 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 40px;
+    gap: 80px;
     width: 100%;
     margin-top: 50px;
+    margin-right: 140px;
 }
 
 .dropdown label {
@@ -153,7 +154,7 @@ p {
 }
 
 .primary-button {
-    margin: 100px auto; /* Zentriert horizontal */
+    margin: 40px auto; /* Zentriert horizontal */
     width: fit-content; /* Nur so breit wie nötig */
 }
 
