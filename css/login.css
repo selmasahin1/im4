@@ -10,7 +10,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 4em;
+    gap: 2em;
 
     width: 100%;
     max-width: 600px; /* Inhalt bleibt kompakt */
@@ -20,15 +20,16 @@ main {
 }
 
 img {
-    width: 200px;
+    width: 100px;
     height: auto;
 }
 
 h2 {
     color: #101E52;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 300;
     text-align: center;
+    margin: 0;
 }
 
 h1 {
@@ -39,8 +40,8 @@ h1 {
 
 input {
     display: flex;
-    width: 690px;
-    height: 5vh;
+    width: 280px;
+    height: 60px;
     padding: 16px 24px;
     align-items: center;
     gap: 10px;
@@ -48,7 +49,7 @@ input {
     border-radius: 16px;
     border: 2px solid #313C66;
 
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: #313C66;
     box-sizing: border-box;
 }
@@ -62,7 +63,7 @@ label {
 form {
     display: flex;
     flex-direction: column;
-    gap: 2.5em;
+    gap: 3em;
     width: 100%;
     align-items: center;
 }
@@ -79,25 +80,4 @@ form {
     color: #101E52;
     font-size: 1.5rem;
     font-weight: 500;
-}
-
-@media (min-width: 768px) {
-    input {
-        width: 300px;
-        height: 4vh;
-        font-size: 2em;
-    }
-
-    img {
-        width: 100px;
-        height: 100px;
-    }
-
-    main {
-        gap: 2em;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
 }

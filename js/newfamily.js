@@ -24,23 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 notification.style.transform = "translateX(-50%)";
                 notification.style.backgroundColor = "#313C66";
                 notification.style.color = "white";
-                notification.style.padding = "60px 55px";
+                notification.style.padding = "15px 10px";
                 notification.style.borderRadius = "5px";
                 notification.style.zIndex = "1000";
-                notification.style.width = "75%";
+                notification.style.width = "300px";
                 notification.style.boxSizing = "border-box";
                 notification.style.display = "flex";
                 notification.style.alignItems = "center";
-                notification.style.fontSize = "3rem";
+                notification.style.fontSize = "20px";
                 notification.style.fontFamily = "Libre Franklin";
-                notification.style.opacity = "0.7";
+                notification.style.opacity = "0.8";
                 
                 // Add check icon
                 const checkIcon = document.createElement("img");
                 checkIcon.src = "/resources/assets/Check.svg"; // Adjust path as needed
-                checkIcon.style.width = "60px";
-                checkIcon.style.height = "60px";
-                checkIcon.style.marginRight = "10px";
+                checkIcon.style.width = "30px";
+                checkIcon.style.height = "30px";
+                checkIcon.style.marginRight = "15px";
                 
                 // Add text node
                 const textNode = document.createTextNode("Der Code wurde kopiert");
