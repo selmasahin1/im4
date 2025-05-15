@@ -18,7 +18,7 @@ class Header extends HTMLElement {
             h1 {
                 color: #F1F4FF;
                 font-family: "Libre Franklin";
-                font-size: 5rem;
+                font-size: 2.5rem;
                 font-weight: 500;
             }
         </style>
