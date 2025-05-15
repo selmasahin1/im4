@@ -8,16 +8,7 @@ async function checkAuth() {
       window.location.href = "/login.html";
       return false;
     }
-
-    const result = await response.json();
-
-    // Display user data in the protected content div
-    const protectedContent = document.getElementById("protectedContent");
-    protectedContent.innerHTML = `
-      <h2>Welcome, ${result.email}!</h2>
-      <p>Your user ID is: ${result.user_id}</p>
-    `;
-
+    
     return true;
   } catch (error) {
     console.error("Auth check failed:", error);
