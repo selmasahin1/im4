@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-// if (!isset($_SESSION['user_id'])) {
-//     http_response_code(401);
-//     header('Content-Type: application/json');
-//     echo json_encode(["error" => "Unauthorized"]);
-//     exit;
-// }
+if (!isset($_SESSION['user_id'])) {
+    http_response_code(401);
+    header('Content-Type: application/json');
+    echo json_encode(["error" => "Unauthorized"]);
+    exit;
+}
 
 require_once '../../system/config.php';
 
@@ -19,10 +19,8 @@ if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $date)) {
     exit;
 }
 
-// $user_id = $_SESSION['user_id'];
-$user_id = 24; // For testing purposes, replace with actual user ID from session
+$user_id = $_SESSION['user_id'];
 
-// $user_id = 12; // For testing purposes, replace with actual user ID from sessiona
 
 // Get family_id and all attendance records for the family on the specified date
 

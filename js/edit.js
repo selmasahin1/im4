@@ -199,7 +199,7 @@ function adjustButtonTextSize(button) {
         return;
     }
 
-    let fontSize = 60;
+    let fontSize = 20;
     button.style.fontSize = `${fontSize}px`;
     button.style.whiteSpace = 'nowrap'; // Keine Zeilenumbrüche
     button.style.overflow = 'hidden';

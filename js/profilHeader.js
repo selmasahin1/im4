@@ -32,13 +32,13 @@ class ProfilHeader extends HTMLElement {
             }
 
             #logo {
-                width: 80px;
+                width: 50px;
                 position: absolute;
                 left: 20px;
             }
         </style>
         <header>
-            <img src="/resources/assets/logo.svg" alt="Logo" id="logo">
+            <img src="/resources/assets/LogoNeu.svg" alt="Logo" id="logo">
             <h1 id="familyname">Familie</h1>
             <a href="profile.html" id="profileLink">
                 <img src="/resources/assets/User.svg" alt="Profil" id="profileIcon">

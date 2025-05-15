@@ -30,6 +30,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-decoration: none;
 }
 
 .home img,
@@ -81,7 +82,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 0.7em;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     color: #101E52;
     margin-bottom: 1em;
@@ -91,7 +92,8 @@ p {
 
 #familyCode {
     color: #101E52;
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: 400;
     margin-bottom: 2em;
     text-align: center;
 }
