@@ -38,11 +38,13 @@ h1 {
 }
 
 input {
-    width: 100%;
-    max-width: 400px;
-    height: 3em;
-    padding: 0.5em 1em;
-
+    display: flex;
+    width: 690px;
+    height: 5vh;
+    padding: 16px 24px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
     border-radius: 16px;
     border: 2px solid #313C66;
 
@@ -77,22 +79,25 @@ form {
     color: #101E52;
     font-size: 1.5rem;
     font-weight: 500;
-    text-align: center;
 }
 
-/* Optional: kleine Verfeinerung für grössere Screens */
 @media (min-width: 768px) {
+    input {
+        width: 300px;
+        height: 4vh;
+        font-size: 2em;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    main {
+        gap: 2em;
+    }
+
     h1 {
         font-size: 3rem;
-    }
-
-    h2 {
-        font-size: 4rem;
-    }
-
-    input,
-    .paragraph,
-    label {
-        font-size: 1.8rem;
     }
 }
