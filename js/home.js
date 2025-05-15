@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (prevDateBtn) {
         prevDateBtn.addEventListener('click', () => {
             changeDate(-1);
-            console.log('Previous date button clicked');
         });
     }
 
@@ -60,7 +59,6 @@ function displayAttendanceRecords(records) {
     const container = document.getElementById('attendanceContainer');
     if (!container) return;
 
-    console.log('Attendance records:', records);
     // Clear previous records
     container.innerHTML = '';
 
@@ -97,11 +95,8 @@ function displayAttendanceRecords(records) {
             // If attendance is a number or string, use triple equals
             allUsers[userId].attendance[record.time_of_day] = record.attending === 1;
 
-            console.log(`User ${userId}, ${record.time_of_day}: ${record.attendance} → ${allUsers[userId].attendance[record.time_of_day]}`);
         }
     });
-
-    console.log('All users:', allUsers);
 
     // Second pass: separate responded vs non-responded users
     Object.entries(allUsers).forEach(([userId, userData]) => {
@@ -131,7 +126,6 @@ function displayRespondingUsers(users) {
     // Get template
     const template = document.getElementById('userAttendanceTemplate');
 
-    console.log('Users with attendance:', users);
     // Create user attendance elements
     Object.values(users).forEach(user => {
         // Clone the template
@@ -166,15 +160,16 @@ function displayNonRespondingUsers(users) {
 
     // Clear container
     container.innerHTML = '';
+    const sectionDivider = document.querySelector('.section-divider');
 
     if (Object.keys(users).length === 0) {
         // Hide the section divider
-        const sectionDivider = document.querySelector('.section-divider');
-        if (sectionDivider) {
-            sectionDivider.style.display = 'none';
-        }
+        sectionDivider.style.display = 'none';
 
         return;
+    } else {
+        sectionDivider.style.display = 'block';
+
     }
 
     // Get template
