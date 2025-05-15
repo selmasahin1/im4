@@ -2,14 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 260px;
     height: 80px;
-
     border-radius: 5px;
     background: #313C66;
-    font-size: 2rem;
-    font-size: 2rem;
     font-size: 2rem;
     color: #F1F4FF;
     font-family: "Libre Franklin", sans-serif;
@@ -23,24 +19,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 240px;
     height: 80px;
-
     border-radius: 5px;
     background: #E1E5F6;
-    font-size: 48px;
     background: #EFF1F9;
-    font-size: 1.8rem;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 500;
     color: #313C66;
     font-family: "Libre Franklin", sans-serif;
     fill: #EFF1F9;
-    stroke-width: 4px;
-    stroke: var(--Blau, #313C66);
     text-decoration: none;
-    border: none;
+    border: 2px solid #313C66;
     box-sizing: border-box;
     cursor: pointer;
 }
