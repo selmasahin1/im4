@@ -81,3 +81,18 @@ form {
     font-size: 1.5rem;
     font-weight: 500;
 }
+
+main p {
+    color: #101E52; /* oder eine Farbe deiner Wahl */
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+main a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #101E52;
+    text-decoration: underline;
+}
+
+
