@@ -94,7 +94,6 @@ function displayAttendanceRecords(records) {
         if (record.time_of_day) {
             allUsers[userId].hasResponded = true;
 
-            // Make sure this correctly converts "1" to true and "0" to false
             // If attendance is a number or string, use triple equals
             allUsers[userId].attendance[record.time_of_day] = record.attending === 1;
 

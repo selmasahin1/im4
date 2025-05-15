@@ -18,7 +18,6 @@ class ProfilHeader extends HTMLElement {
             h1 {
                 color: #F1F4FF;
                 font-family: "Libre Franklin";
-                font-size: 5rem;
                 font-weight: 500;
             }
             
@@ -28,12 +27,12 @@ class ProfilHeader extends HTMLElement {
             }
             
             #profileIcon {
-                width: 120px;
-                height: 120px;
+                width: 60px;
+                height: 60px;
             }
 
             #logo {
-                width: 160px;
+                width: 80px;
                 position: absolute;
                 left: 20px;
             }
