@@ -52,7 +52,6 @@ function changeDate(delta) {
     dateDisplay.innerHTML = readableDate;
     dateDisplay.setAttribute('data-date', newDate);
 
-
     loadAttendanceForDate(newDate);
 }
 
@@ -189,12 +188,22 @@ async function loadAttendanceForDate(date) {
     }
 }
 
-// Adjust button text size dynamically
+// Adjust button text size dynamically and keep text in one line with ellipsis
 function adjustButtonTextSize(button) {
+    // Wenn Button ausgewählt, etwas kleinere Schrift und kein Umbruch
+    if (button.classList.contains('selected')) {
+        button.style.fontSize = '20px';
+        button.style.whiteSpace = 'nowrap';
+        button.style.overflow = 'hidden';
+        button.style.textOverflow = 'ellipsis';
+        return;
+    }
+
     let fontSize = 60;
     button.style.fontSize = `${fontSize}px`;
-    button.style.whiteSpace = 'normal';
-    button.style.wordBreak = 'break-word';
+    button.style.whiteSpace = 'nowrap'; // Keine Zeilenumbrüche
+    button.style.overflow = 'hidden';
+    button.style.textOverflow = 'ellipsis';
 
     const maxHeight = parseFloat(getComputedStyle(button).height);
     const maxWidth = parseFloat(getComputedStyle(button).width);
@@ -208,8 +217,9 @@ function adjustButtonTextSize(button) {
     tester.style.lineHeight = "1.2";
     tester.style.padding = "0";
     tester.style.border = "none";
-    tester.style.whiteSpace = "normal";
-    tester.style.wordBreak = "break-word";
+    tester.style.whiteSpace = "nowrap";
+    tester.style.overflow = "hidden";
+    tester.style.textOverflow = "ellipsis";
     tester.innerText = button.textContent;
     document.body.appendChild(tester);
 
